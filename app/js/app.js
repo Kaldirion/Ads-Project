@@ -4,7 +4,8 @@ adsApp.config(['$routeProvider',
     function($routeProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'app/templates/adsHome.html'
+                templateUrl: 'app/templates/adsHome.html',
+                controller: 'AdsCtrl'
             })
             .when('/register', {
                 templateUrl: 'app/templates/registerForm.html'
@@ -21,7 +22,11 @@ adsApp.config(['$routeProvider',
             .when('/user/ads', {
                 templateUrl: 'app/templates/user/userAds.html'
             })
+            .when('/user/profile', {
+                templateUrl: 'app/templates/user/userProfile.html'
+            })
             .otherwise({
                 redirectTo: '/'
             });
-    }]);
+    }])
+    .constant('baseUrl', 'http://localhost:1337/api');
