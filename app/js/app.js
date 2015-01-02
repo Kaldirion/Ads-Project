@@ -1,4 +1,4 @@
-var adsApp = angular.module('adsApp',['ngRoute']);
+var adsApp = angular.module('adsApp',['ngResource','ngRoute']);
 
 adsApp.config(['$routeProvider',
     function($routeProvider) {
@@ -29,4 +29,5 @@ adsApp.config(['$routeProvider',
                 redirectTo: '/'
             });
     }])
-    .constant('baseUrl', 'http://localhost:1337/api');
+    .constant('baseUrl', 'http://localhost:1337/api')
+    .constant('pageSize', 2);

@@ -1,7 +1,7 @@
 "use strict";
 
 adsApp.factory('AdsResource', ['$resource', 'baseUrl',
-    function ($resource, baseUrl,pageSize) {
+    function ($resource, baseUrl) {
             var publicAdsResource = $resource(baseUrl + '/ads', null, {
                 'getAll': {method: 'GET', isArray: false}
             });

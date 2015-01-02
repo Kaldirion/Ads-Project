@@ -10,5 +10,6 @@ adsApp.controller('AdsCtrl', ['$scope', 'pageSize', 'AdsResource',
                 }
             )
         };
+
         $scope.getListedItems($scope.requestParams);
     }]);
