@@ -30,4 +30,4 @@ adsApp.config(['$routeProvider',
             });
     }])
     .constant('baseUrl', 'http://localhost:1337/api')
-    .constant('pageSize', 2);
+    .constant('pageSize', 8);

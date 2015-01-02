@@ -3,7 +3,19 @@
         <ul>
             <li ng-repeat = "ad in ads">
                 <div>
-                    <h3>{{ad.id}}</h3>
+                    <h3>{{ad.title}}</h3>
+                    <time>{{ad.date | date:'d-MMM-yyyy'}}</time>
+                </div>
+                <div>
+                    <img src="" alt="" data-ng-src="{{ad.imageDataUrl}}"/>
+                </div>
+                <div>
+                    <p>{{ad.text}}</p>
+                    <p><span>Name:</span>{{ad.ownerName}}</p>
+                    <p><span>Email:</span>
+                        <a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a>
+                    </p>
+                    <p><span>Tel.</span>{{ad.ownerPhone}}</p>
                 </div>
             </li>
         </ul>
