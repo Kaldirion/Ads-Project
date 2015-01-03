@@ -1,5 +1,8 @@
-adsApp.controller('AdsCtrl', ['$scope', 'pageSize', 'AdsResource',
-    function ($scope, pageSize, AdsResource) {
+adsApp.controller('AdsCtrl', ['$scope', 'pageSize', 'AdsResource','CategoriesService','TownsService',
+    function ($scope, pageSize, AdsResource, CategoriesService,TownsService) {
+
+        $scope.categories = CategoriesService.all();
+        $scope.towns = TownsService.all();
 
         $scope.requestParams = {startPage: 1, pageSize: pageSize};
         $scope.getListedItems = function (adsRequestParams) {
