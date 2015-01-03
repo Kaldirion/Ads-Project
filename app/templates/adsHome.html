@@ -1,23 +1,27 @@
-<div>
-    <section>
-        <ul>
-            <li ng-repeat = "ad in ads">
-                <div>
-                    <h3>{{ad.title}}</h3>
-                    <time>{{ad.date | date:'d-MMM-yyyy'}}</time>
-                </div>
-                <div>
-                    <img src="" alt="" data-ng-src="{{ad.imageDataUrl}}"/>
-                </div>
-                <div>
-                    <p>{{ad.text}}</p>
-                    <p><span>Name:</span>{{ad.ownerName}}</p>
-                    <p><span>Email:</span>
-                        <a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a>
-                    </p>
-                    <p><span>Tel.</span>{{ad.ownerPhone}}</p>
-                </div>
-            </li>
-        </ul>
-    </section>
-</div>
+    <div class="row clearfix">
+        <section class="container">
+            <ul class="ads">
+                <li ng-repeat = "ad in ads" class="col-md-8">
+                    <div class="row">
+                        <h4 class="col-md-6">{{ad.title}}</h4>
+                        <time class="col-md-2 pull-right">{{ad.date | date:'d-MMM-yyyy'}}</time>
+                    </div>
+                    <div class="row" class="col-md-8">
+                        <div class="col-md-3">
+                            <img src="" alt="" data-ng-src="{{ad.imageDataUrl}}"/>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5">
+                                <p class="ads-info-text">{{ad.text}}</p>
+                                <p class="ads-info-owner"><span>Name:</span>{{ad.ownerName}}</p>
+                                <p class="ads-info-email"><span>Email:</span>
+                                    <a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a>
+                                </p>
+                                <p class="ads-info-tel"><span>Tel.</span>{{ad.ownerPhone}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>

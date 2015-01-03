@@ -1,0 +1,23 @@
+.page-header {
+    margin-top: 0px;
+    background-color: #A9D18E;
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+
+/*Ads styling*/
+
+.ads li{
+    background-color: #A9D18E;
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+.ads-info-text ,.ads-info-tel,.ads-info-email,.ads-info-owner {
+    border: 1px dotted transparent;
+    background-color: #C5DFB4;
+}
