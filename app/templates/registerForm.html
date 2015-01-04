@@ -1,11 +1,40 @@
-<div>
-    <h3>User Registration</h3>
-    <hr/>
-    <div>
-        Username: <br/><input type="text"/><br/>
-        Password: <br/><input type="password"/>
-        Confirm Password: <br/><input type="password"/>
-        Name: <br/><input type="text"/>
-        Phone: <br/><input type="text"/>
-    </div>
+<div class="col-md-6 col-md-offset-2 register-form">
+    <fieldset class="input-group">
+        <legend class="text-center">User Registration</legend>
+        <div class="col-md-6">
+            <label for="username" class="col-md-3 control-label">Username: </label>
+            <div class="col-md-12">
+                <input type="text" name="username" class="form-control" id="username" ng-model="credentials.username" required>
+            </div>
+            <label for="password" class="col-md-3 control-label">Password: </label>
+            <div class = "col-md-12">
+                <input type="password" name="password" class="form-control" id="password" ng-model="credential.password" required>
+            </div>
+            <label for="fullName" class="col-md-3 control-label">Name: </label>
+            <div class = "col-md-12">
+                <input type="text" name="fullName" class="form-control" id="fullName" ng-model="credential.fillName" required>
+            </div>
+            <label for="phonenumber" class="col-md-3 control-label">Phone: </label>
+            <div class = "col-md-12">
+                <input type="text" name="phonenumber" class="form-control" id="phonenumber" ng-model="credential.phonenumber" required>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="confirmedPass" class="col-md-12 control-label">Confirm password: </label>
+            <div class = "col-md-12">
+                <input type="password" name="confirmedPass" class="form-control" id="confirmedPass" ng-model="credential.confirmedPass" required>
+            </div>
+            <label for="email" class="col-md-3 control-label">Email: </label>
+            <div class = "col-md-12">
+                <input type="email" name="email" class="form-control" id="email" ng-model="credential.email" required>
+            </div>
+            <label for="select" class="col-md-3 control-label">Town: </label>
+            <div class="col-md-12">
+                <select class="form-control" id="select" name="town" ng-model="credentials.town">
+                    <option>select</option>
+                    <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
 </div>
