@@ -1,11 +1,23 @@
-<div class="col-md-10">
-    <fieldset class="input-group">
-        <legend>Login</legend>
-        <div class="col-md-5">
-            Username : <br/><input type="text" class="form-control"/><br/>
-            Password : <br/><input type="password" class="form-control"/><br/>
-            <a href="#" class="btn btn-default">Login</a>
-            <a href="#/register">Register here</a>
-        </div>
-    </fieldset>
-</div>
+    <div class="col-md-4 col-md-offset-3 login-form">
+        <fieldset class="input-group">
+            <legend class="text-center">Login</legend>
+            <div class="form-group row">
+                <label for="username" class="col-md-3 control-label">Username: </label>
+                <div class="col-md-12">
+                    <input type="text" name="username" class="form-control" id="username" ng-model="credentials.username" required>
+                </div>
+                <div class="pull-right text-danger col-md-3" ng-show="loginForm.username.$error.required && loginForm.username.$dirty">Required!</div>
+            </div>
+            <div class="form-group row">
+                <label for="password" class="col-md-3">Password: </label>
+                <div class="col-md-12">
+                    <input type="password" class="form-control" id="password" name="password"  ng-model="credentials.password" required>
+                </div>
+                <div class="pull-right text-danger col-lg-3" ng-show="loginForm.password.$error.required && loginForm.password.$dirty"> Required!</div>
+            </div>
+            <div class="form-group col-md-12">
+                <a href="#" class="btn btn-default col-md-3">Login</a>
+                <a href="#/register" class="col-md-2-offset-1">Register here</a>
+            </div>
+        </fieldset>
+    </div>
