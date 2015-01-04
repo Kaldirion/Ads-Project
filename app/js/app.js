@@ -11,7 +11,8 @@ adsApp.config(['$routeProvider',
                 templateUrl: 'app/templates/registerForm.html'
             })
             .when('/login',{
-                templateUrl: 'app/templates/loginForm.html'
+                templateUrl: 'app/templates/loginForm.html',
+                controller: 'LoginCtrl'
             })
             .when('/user/home',{
                 templateUrl: 'app/templates/user/userHome.html'
