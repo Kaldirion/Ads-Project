@@ -17,7 +17,7 @@ adsApp.factory('LoginService',function Login($http,baseUrl, $q){
     }
 
     return{
-        login: login,
+        login: login
         //logout: logout
     }
 });
