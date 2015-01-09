@@ -1,8 +1,8 @@
-<div class="towns-nav">
+<div class="towns-nav" ng-controller="TownFilter">
     <h3>Towns</h3>
     <ul class="nav nav-pills nav-stacked pre-scrollable">
         <li ng-repeat="town in towns">
-            <a href="#">{{town.name}}</a>
+            <a href="#/" data-ng-click="townFilter(town.id)">{{town.name}}</a>
         </li>
     </ul>
 </div>
