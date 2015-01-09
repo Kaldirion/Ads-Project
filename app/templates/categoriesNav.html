@@ -1,8 +1,11 @@
-<div class="categories-nav">
+<div class="categories-nav" ng-controller="CategoryFilter">
     <h3>Categories</h3>
     <ul class="nav nav-pills nav-stacked pre-scrollable">
+        <li>
+            <a href="#/" ng-click="categoryFilter(null)">All</a>
+        </li>
        <li ng-repeat="cat in categories">
-           <a href="#">{{cat.name}}</a>
+           <a href="#/" ng-click="categoryFilter(cat.id)">{{cat.name}}</a>
        </li>
     </ul>
 </div>
