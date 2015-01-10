@@ -1,14 +1,50 @@
-<div>
-    <h3>Edit Profile</h3>
+<div class="col-md-offset-1 col-md-4 edit-profile-form">
+    <h3 class="text-center">Edit Profile</h3>
     <hr/>
     <form>
-
+        <div class="form-group row col-md-12 center-block">
+            <label for="userFullName">Name:</label>
+            <input id="userFullName" class="form-control" type="text" data-ng-model="user.fullName" required>
+        </div>
+        <div class="form-group row col-md-12 center-block">
+            <label for="userEmail">Name:</label>
+            <input id="userEmail" class="form-control" type="email" data-ng-model="user.email" required>
+        </div>
+        <div class="form-group row col-md-12 center-block">
+            <label for="userPhone">Name:</label>
+            <input id="userPhone" class="form-control" type="text" data-ng-model="user.phone" required>
+        </div>
+        <div class="form-group row col-md-12 center-block">
+            <strong>Town:</strong>
+            <select if="adTown" ng-controller="TownFilter" class="form-control" required>
+                <option ng-repeat="town in towns" ng-model="user.town">{{town.name}}</option>
+            </select>
+        </div>
+        <div class="form-group row col-md-12 center-block">
+            <a href="#" class="btn btn-default col-md-3">Update</a>
+            <a href="#/" class="btn btn-default col-md-3 col-md-offset-1">Cancel</a>
+        </div>
     </form>
 </div>
-<div>
+<div class="col-md-offset-1 col-md-4 edit-profile-form">
     <h3>Change Password</h3>
     <hr/>
     <form>
-
+        <div class="form-group row col-md-12 center-block">
+            <label for="userPassword">Name:</label>
+            <input id="userPassword" class="form-control" type="password" data-ng-model="user.password" required>
+        </div>
+        <div class="form-group row col-md-12 center-block">
+            <label for="userNewPassword">Name:</label>
+            <input id="userNewPassword" class="form-control" type="password" data-ng-model="user.NewPassword" required>
+        </div>
+        <div class="form-group row col-md-12 center-block">
+            <label for="userNewPasswordConfirm">Name:</label>
+            <input id="userNewPasswordConfirm" class="form-control" type="password" data-ng-model="user.NewPasswordConfirm" required>
+        </div>
     </form>
+    <div class="form-group row col-md-12 center-block">
+        <a href="#" class="btn btn-default col-md-6">Change Password</a>
+        <a href="#/" class="btn btn-default col-md-3 col-md-offset-1">Cancel</a>
+    </div>
 </div>
