@@ -1,1 +1,38 @@
-todo publish Ad template
+<form class="form-horizontal col-md-offset-1 col-md-8 publish-ad-form">
+    <h4>Publish New Ad</h4>
+    <hr/>
+    <fieldset>
+        <div container-fluid col-md-8>
+            <div class="form-group row col-md-8">
+                <label for="adTitle">Title:</label>
+                <input id="adTitle" class="form-control" type="text" data-ng-model="ad.title" required>
+            </div>
+            <div class="form-group row col-md-8">
+                <label for="adText">Text:</label>
+                <input id="adText" class="form-control" type="text" data-ng-model="ad.text" required>
+            </div>
+            <div class="form-group row col-md-8">
+                <label for="adImage">Image:</label>
+                <input id="adImage" class="form-control" type="file" data-ng-model="ad.image">
+            </div>
+            <div class="form-group row col-md-8">
+                <strong>Category:</strong>
+                <select if="adTown" ng-controller="CategoryFilter" class="form-control" required>
+                    <option ng-repeat="cat in categories" ng-model="ad.category">{{cat.name}}</option>
+                    console.log(ad.town);
+                </select>
+            </div>
+            <div class="form-group row col-md-8">
+                <strong>Town:</strong>
+                <select if="adTown" ng-controller="TownFilter" class="form-control" required>
+                    <option ng-repeat="town in towns" ng-model="ad.town">{{town.name}}</option>
+                    console.log(ad.town);
+                </select>
+            </div>
+            <div class="form-group row col-md-8">
+                <a href="#" class="btn btn-default col-md-3">Publish</a>
+                <a href="#/" class="btn btn-default col-md-3">Cancel</a>
+            </div>
+        </div>
+    </fieldset>
+</form>
