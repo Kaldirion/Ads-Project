@@ -35,15 +35,16 @@ adsApp.config(['$routeProvider',
                 controller: 'LoginCtrl'
             })
             .when('/user/home',{
-                templateUrl: 'app/templates/user/userAds.html',
-                controller: 'UserAdsCtrl'
+                templateUrl: 'app/templates/adsHome.html',
+                controller: 'AdsCtrl'
                 //resolve: userPermission.isUser
             })
             .when('/user/ads/publish',{
                 templateUrl: 'app/templates/user/publishAd.html'
             })
             .when('/user/ads', {
-                templateUrl: 'app/templates/user/userAds.html'
+                templateUrl: 'app/templates/user/userAds.html',
+                controller: 'UserAdsCtrl'
             })
             .when('/user/profile', {
                 templateUrl: 'app/templates/user/userProfile.html'

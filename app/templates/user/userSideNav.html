@@ -1,10 +1,25 @@
-<div class="left-nav" ng-controller="UserNavigation">
-    <h4>Navigation</h4>
-    <hr/>
-    <ul class="nav nav-pills nav-stacked">
-        <li><a href="#/user/home">Home</a></li>
-        <li><a href="#/user/ads" ng-click="showUserAdsNav">My Ads</a></li>
-        <li><a href="#/user/ads/publish">Publish New Ad</a></li>
-        <li><a href="#/user/profile">Edit Profile</a></li>
-    </ul>
-</div>
+<dvi>
+    <div class="row left-nav" ng-controller="UserNavigation">
+        <h4>Navigation</h4>
+        <hr/>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#/user/home">Home</a></li>
+            <li><a href="#/user/ads">My Ads</a></li>
+            <li><a href="#/user/ads/publish">Publish New Ad</a></li>
+            <li><a href="#/user/profile">Edit Profile</a></li>
+        </ul>
+    </div>
+
+
+    <div class="row left-nav" data-ng-if = "location.path()==='/user/ads'">
+        <h4>My Ads</h4>
+        <hr/>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="#">All</a></li>
+            <li><a href="#">Published</a></li>
+            <li><a href="#">Waiting Approval</a></li>
+            <li><a href="#">Inactive</a></li>
+            <li><a href="#">Rejected</a></li>
+        </ul>
+    </div>
+</dvi>
