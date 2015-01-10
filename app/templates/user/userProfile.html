@@ -1,4 +1,4 @@
-<div class="col-md-offset-1 col-md-4 edit-profile-form">
+<div class="col-md-offset-1 col-md-4 edit-profile-form" ng-controller="UserProfileCtrl">
     <h3 class="text-center">Edit Profile</h3>
     <hr/>
     <form>
@@ -7,11 +7,11 @@
             <input id="userFullName" class="form-control" type="text" data-ng-model="user.fullName" required>
         </div>
         <div class="form-group row col-md-12 center-block">
-            <label for="userEmail">Name:</label>
+            <label for="userEmail">Email:</label>
             <input id="userEmail" class="form-control" type="email" data-ng-model="user.email" required>
         </div>
         <div class="form-group row col-md-12 center-block">
-            <label for="userPhone">Name:</label>
+            <label for="userPhone">Phone:</label>
             <input id="userPhone" class="form-control" type="text" data-ng-model="user.phone" required>
         </div>
         <div class="form-group row col-md-12 center-block">
@@ -31,15 +31,15 @@
     <hr/>
     <form>
         <div class="form-group row col-md-12 center-block">
-            <label for="userPassword">Name:</label>
+            <label for="userPassword">Old Password:</label>
             <input id="userPassword" class="form-control" type="password" data-ng-model="user.password" required>
         </div>
         <div class="form-group row col-md-12 center-block">
-            <label for="userNewPassword">Name:</label>
+            <label for="userNewPassword">New Password:</label>
             <input id="userNewPassword" class="form-control" type="password" data-ng-model="user.NewPassword" required>
         </div>
         <div class="form-group row col-md-12 center-block">
-            <label for="userNewPasswordConfirm">Name:</label>
+            <label for="userNewPasswordConfirm">Confirm new password:</label>
             <input id="userNewPasswordConfirm" class="form-control" type="password" data-ng-model="user.NewPasswordConfirm" required>
         </div>
     </form>
