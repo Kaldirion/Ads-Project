@@ -1,8 +1,8 @@
 <ul class="pagination">
     <li><a href="" data-ng-click="firstPage()">««</a></li>
-    <li><a href="" data-ng-click="prevPage()">Previous</a></li>
+    <li><a href="" data-ng-click="previousPage()">Previous</a></li>
     <li data-ng-repeat="i in pagesArr track by $index" data-id="{{$index + 1}}">
-        <a href="" data-ng-click="setStartPage($index+1)">{{$index + 1}}</a>
+        <a href="" data-ng-click="selectPage($index+1)">{{$index + 1}}</a>
     </li>
     <li><a href="" data-ng-click="nextPage(pagesArr.length)">Next</a></li>
     <li><a href="" data-ng-click="lastPage(pagesArr.length)">»»</a></li>

@@ -3,7 +3,7 @@ adsApp.directive('pagination',function(){
         restrict: 'A',
         templateUrl : './app/templates/pagination.html',
         link: function($scope){
-            $scope.forstPage = function(){
+            $scope.firstPage = function(){
                 $scope.requestParams.startPage = 1;
                 $scope.getListedItems($scope.requestParams);
             }
@@ -24,6 +24,11 @@ adsApp.directive('pagination',function(){
 
             $scope.lastPage = function(maxPages){
                 $scope.requestParams.startPage = maxPages;
+                $scope.getListedItems($scope.requestParams);
+            }
+
+            $scope.selectPage = function(pageIndex) {
+                $scope.requestParams.startPage = pageIndex;
                 $scope.getListedItems($scope.requestParams);
             }
         }
