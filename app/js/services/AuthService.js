@@ -48,6 +48,9 @@ adsApp.factory('AuthService',function AuthService($window){
         return headers;
     }
 
+    function deleteAuthorizationHeaders() {
+        delete headers['Authorization'];
+    }
 
     return {
         setUserSession: setUserSession,
@@ -55,6 +58,7 @@ adsApp.factory('AuthService',function AuthService($window){
         getUsername: getUsername,
         getAccessToken: getAccessToken,
         userIsLogged: userIsLogged,
-        getAuthorizationHeaders: getAuthorizationHeaders
+        getAuthorizationHeaders: getAuthorizationHeaders,
+        deleteAuthorizationHeaders: deleteAuthorizationHeaders
     }
 });

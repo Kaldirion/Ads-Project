@@ -1,1 +1,41 @@
+<div class="row clearfix" ng-controller="UserAdsCtrl">
+    <section class="container">
+        <ul class="ads">
+            <li ng-repeat = "ad in ads" class="col-md-8">
+                <div class="row">
+                    <h4 class="col-md-6">{{ad.title}}</h4>
+                    <time class="col-md-2 pull-right">{{ad.date | date:'d-MMM-yyyy'}}</time>
+                </div>
+                <div class="row" class="col-md-8">
+                    <div class="col-md-3">
+                        <img src="" alt="" data-ng-src="{{ad.imageDataUrl || './app/assets/imgs/NoImage.png'}}"/>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5">
+                            <p class="ads-info-text">{{ad.text}}</p>
+                            <p class="ads-info-owner"><span>Name:</span>{{ad.ownerName}}</p>
+                            <p class="ads-info-email"><span>Email:</span>
+                                <a href="mailto:{{ad.ownerEmail}}">{{ad.ownerEmail}}</a>
+                            </p>
+                            <p class="ads-info-tel"><span>Tel.</span>{{ad.ownerPhone}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="user-actions pull-right col-md-3">
+                    <div>Status:</div>
+                    <p class="on-background">{{ad.status}}</p>
+                    <a href="" data-ng-if="ad.status=='WaitingApproval' || ad.status=='Published'"
+                       class="btn form-btn col-md-12">Deactivate</a>
+                    <a href="#" data-ng-if="ad.status=='Inactive'"
+                       class="btn form-btn col-md-12">Edit</a>
+                    <a href="#" data-ng-if="ad.status=='Inactive'"
+                    class="btn form-btn col-md-12">Publish Again</a>
+                    <a href="#" data-ng-if="ad.status=='Inactive'"
+                       class="btn form-btn col-md-12">Delete</a>
+                </div>
+            </li>
+        </ul>
 
+    </section>
+    <div pagination class="row"></div>
+</div>
