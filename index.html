@@ -25,14 +25,13 @@
 </div>
 
 <div class="container-fluid" data-ng-controller="AdsCtrl">
-    <aside class="aside left-aside pull-left col-md-2" data-ng-show="!LoginService">
+    <aside class="aside left-aside pull-left col-md-2" data-ng-show="!authorization.userIsLogged()">
         <div class="row" ng-include="'app/templates/sideNav.html'"></div>
         <div class="row" ng-include="'app/templates/authNav.html'"></div>
     </aside>
     <div ng-model="LogedIn"></div>
-    <aside class="aside left-aside pull-left col-md-2" data-ng-controller="UserAdsCtrl"
-         data-ng-show="authenticate"
-         ng-include="'app/templates/user/userSideNav.html'">
+    <aside class="aside left-aside pull-left col-md-2" ng-show="authorization.userIsLogged()">
+        <div class="row" ng-include="'app/templates/user/userSideNav.html'"></div>
     </aside>
     <aside class="aside left-aside pull-left col-md-2" ng-show="sideNavVis">"
         <div class="left-nav">
