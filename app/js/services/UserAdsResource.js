@@ -2,16 +2,17 @@
 
 adsApp.factory('UserAdsResource', ['$resource', 'baseUrl','AuthService',
     function ($resource, baseUrl,AuthService) {
-        var userProfileUrl = baseUrl + '/user/profile',
-
+        var userAdsUrl = baseUrl + '/user/ads',
             headers = AuthService.getAuthorizationHeaders(),
-            UserAdsResource = $resource(userProfileUrl, null, {
-                'get': {method: 'GET', headers: headers}
-            })
+            userAdsResource = $resource(userAdsUrl, null, {
+                'getUserAds': {method: 'GET', headers: headers}
+            });
+
+        console.log(headers);
 
         return {
-            get: function () {
-                return UserAdsResource.get()
+            getUserAds: function (adsRequestParams) {
+                return userAdsResource.getUserAds(adsRequestParams).$promise;
             }
         }
     }]);
