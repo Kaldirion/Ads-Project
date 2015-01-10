@@ -1,18 +1,18 @@
 <div class="col-md-offset-1 col-md-4 edit-profile-form" ng-controller="UserProfileCtrl">
     <h3 class="text-center">Edit Profile</h3>
     <hr/>
-    <form>
+    <form name="profileEditForm">
         <div class="form-group row col-md-12 center-block">
             <label for="userFullName">Name:</label>
-            <input id="userFullName" class="form-control" type="text" data-ng-model="user.fullName" required>
+            <input id="userFullName" class="form-control" type="text" data-ng-model="user.fullName">
         </div>
         <div class="form-group row col-md-12 center-block">
             <label for="userEmail">Email:</label>
-            <input id="userEmail" class="form-control" type="email" data-ng-model="user.email" required>
+            <input id="userEmail" class="form-control" type="email" data-ng-model="user.email">
         </div>
         <div class="form-group row col-md-12 center-block">
             <label for="userPhone">Phone:</label>
-            <input id="userPhone" class="form-control" type="text" data-ng-model="user.phone" required>
+            <input id="userPhone" class="form-control" type="text" data-ng-model="user.phone">
         </div>
         <div class="form-group row col-md-12 center-block">
             <strong>Town:</strong>
@@ -21,7 +21,7 @@
             </select>
         </div>
         <div class="form-group row col-md-12 center-block">
-            <a href="#" class="btn btn-default col-md-3">Update</a>
+            <a href="#" ng-click="editUserProfile" class="btn btn-default col-md-3">Update</a>
             <a href="#/" class="btn btn-default col-md-3 col-md-offset-1">Cancel</a>
         </div>
     </form>
@@ -32,15 +32,15 @@
     <form>
         <div class="form-group row col-md-12 center-block">
             <label for="userPassword">Old Password:</label>
-            <input id="userPassword" class="form-control" type="password" data-ng-model="user.password" required>
+            <input id="userPassword" class="form-control" type="password" data-ng-model="user.password">
         </div>
         <div class="form-group row col-md-12 center-block">
             <label for="userNewPassword">New Password:</label>
-            <input id="userNewPassword" class="form-control" type="password" data-ng-model="user.NewPassword" required>
+            <input id="userNewPassword" class="form-control" type="password" data-ng-model="user.NewPassword">
         </div>
         <div class="form-group row col-md-12 center-block">
             <label for="userNewPasswordConfirm">Confirm new password:</label>
-            <input id="userNewPasswordConfirm" class="form-control" type="password" data-ng-model="user.NewPasswordConfirm" required>
+            <input id="userNewPasswordConfirm" class="form-control" type="password" data-ng-model="user.NewPasswordConfirm">
         </div>
     </form>
     <div class="form-group row col-md-12 center-block">
