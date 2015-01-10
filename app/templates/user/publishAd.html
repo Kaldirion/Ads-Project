@@ -19,7 +19,7 @@
                 <strong>Category:</strong>
                 <select if="adTown" ng-controller="CategoryFilter" class="form-control" required>
                     <option ng-repeat="cat in categories" ng-model="ad.category">{{cat.name}}</option>
-                    console.log(ad.town);
+                    console.log(ad.category);
                 </select>
             </div>
             <div class="form-group row col-md-8">
