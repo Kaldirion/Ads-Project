@@ -2,6 +2,26 @@ var adsApp = angular.module('adsApp',['ngResource','ngRoute']);
 
 adsApp.config(['$routeProvider',
     function($routeProvider) {
+
+        var userPermission = {
+            isUser: {
+                LoginService: function(AuthService) {
+                    if (authorization.isUser() == true) {
+                        return true;
+                    } else {
+                        return $q.reject('not authorized');
+                    }
+                }},
+            isAdmin: {
+                LoginService: function (AuthService) {
+                    if (authorization.isAdmin() == true) {
+                        return true;
+                    } else {
+                        return $q.reject('not authorized');
+                    }
+                }
+            }
+        };
         $routeProvider
             .when('/', {
                 templateUrl: 'app/templates/adsHome.html',
@@ -15,7 +35,9 @@ adsApp.config(['$routeProvider',
                 controller: 'LoginCtrl'
             })
             .when('/user/home',{
-                templateUrl: 'app/templates/user/userHome.html'
+                templateUrl: 'app/templates/user/adsHome.html',
+                controller: 'UserAdsCtrl',
+                resolve: userPermission.isUser
             })
             .when('/user/ads/publish',{
                 templateUrl: 'app/templates/user/publishAd.html'

@@ -8,7 +8,7 @@ adsApp.controller('LoginCtrl',function($scope,$location,LoginService,AuthService
            LoginService.login(credential).then(function(data){
                AuthService.setUserSession(data);
                //console.log(data);
-               $location.path('/home');
+               $location.path('/user/home');
            }, function(error) {
                notification.errorMessage('Invalid Login');
            });

@@ -1,5 +1,5 @@
-adsApp.controller('AdsCtrl', ['$scope', 'pageSize', 'AdsResource','CategoriesService','TownsService',
-    function ($scope, pageSize, AdsResource, CategoriesService,TownsService) {
+adsApp.controller('AdsCtrl', ['$scope', 'pageSize', 'AdsResource','CategoriesService','TownsService','AuthService',
+    function ($scope, pageSize, AdsResource, CategoriesService,TownsService,AuthService) {
 
         $scope.categories = CategoriesService.all();
         $scope.towns = TownsService.all();
@@ -13,6 +13,8 @@ adsApp.controller('AdsCtrl', ['$scope', 'pageSize', 'AdsResource','CategoriesSer
                 }
             )
         };
+
+        $scope.LogedIn = AuthService.userIsLogged();
 
         $scope.getListedItems($scope.requestParams);
     }]);

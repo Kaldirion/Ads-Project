@@ -1,9 +1,9 @@
-<div>
+<div class="left-nav" ng-controller="UserNavigation">
     <h4>Navigation</h4>
     <hr/>
     <ul class="nav nav-pills nav-stacked">
         <li><a href="#/user/home">Home</a></li>
-        <li><a href="#/user/ads">My Ads</a></li>
+        <li><a href="#/user/ads" ng-click="showUserAdsNav">My Ads</a></li>
         <li><a href="#/user/ads/publish">Publish New Ad</a></li>
         <li><a href="#/user/profile">Edit Profile</a></li>
     </ul>
