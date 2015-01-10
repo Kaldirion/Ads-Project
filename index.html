@@ -18,8 +18,8 @@
     <h2 data-ng-if = "location.path()==='/user/ads/publish'">Ads – Publish New Ad</h2>
     <h2 data-ng-if = "location.path()==='/user/profile'">Ads – Edit Profile</h2>
 
-    <div class="pull-right" ng-show="authenticate">
-        <div class="badge">User</div>
+    <div class="pull-right" ng-show="authorization.userIsLogged()">
+        <div class="badge">{{authorization.getUsername()}}</div>
         <a href="#">Logout</a>
     </div>
 </div>
