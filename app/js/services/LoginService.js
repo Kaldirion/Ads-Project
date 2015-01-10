@@ -1,4 +1,4 @@
-adsApp.factory('LoginService',function Login($http,baseUrl, $q){
+adsApp.factory('LoginService',function Login($http,baseUrl, $q,AuthService){
 
     function login(credentials) {
         var deferred = $q.defer();
@@ -16,8 +16,29 @@ adsApp.factory('LoginService',function Login($http,baseUrl, $q){
         return deferred.promise;
     }
 
+    function logout(){
+        var deferred = $q.defer(),
+            headers = AuthService.getAuthorizationHeaders();
+
+        $http({
+            method: 'POST',
+            url: baseUrl + '/user/logout',
+            data: {},
+            headers: headers
+        })
+            .success(function(data, status, headers, config) {
+                AuthService.deleteAuthorizationHeaders();
+                delete sessionStorage['currentUser'];
+                deferred.resolve(data, status, headers, config);
+            })
+            .error(function(data, status, headers, config) {
+                deferred.reject(data, status, headers, config);
+            });
+        return deferred.promise;
+    }
+
     return{
-        login: login
-        //logout: logout
+        login: login,
+        logout: logout
     }
 });
