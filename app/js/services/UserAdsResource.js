@@ -1,14 +1,12 @@
 "use strict";
 
-adsApp.factory('UserAdsResource', ['$resource', 'baseUrl','AuthService',
-    function ($resource, baseUrl,AuthService) {
+adsApp.factory('UserAdsResource', ['$resource', 'baseUrl','AuthService','pagesize',
+    function ($resource, baseUrl,AuthService,pagesize) {
 
         var headers = AuthService.getAuthorizationHeaders();
-
-        //baseUrl + '/user/ads?pagesize=3&startpage=' + pageNumber + '&status=null', null
-
-        var UserAdsResource = $resource(baseUrl + '/user/ads?pagesize=3&startpage=1&status=null', null, {
-            'getAll': {method: 'GET', isArray: false}
+        var UserAdsResource = $resource(baseUrl + '/user/ads', null, {
+            'getUserAds': {method: 'GET', headers: headers},
+            'getUserAdsWithStatus': {method: 'GET', headers: headers}
         });
         return {
             all: function (adsRequestParams) {
