@@ -6,13 +6,16 @@ adsApp.controller('RegisterController',['$scope','$location','notification','Reg
 
         $scope.Register = function(user, registerForm){
             if (registerForm.$valid){
-                RegisterService.register(user)
-                    .then(
+                console.log(user);
+                RegisterService.register(user).then(
                     function(registerSuccessData){
                         notification.successMessage('User account created. Please login!');
-                        $location.path('/user/home');
+                        $location.path('/home');
+                    }, function(error) {
+                        notification.errorMessage('There was problem with your register. Please try again.');
+                        $location.path('/register');
                     }
-                )
+                );
             }
         }
 }]);

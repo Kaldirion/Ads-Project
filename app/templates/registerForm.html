@@ -4,41 +4,41 @@
         <div class="col-md-6">
             <label for="username" class="col-md-3 control-label">Username: </label>
             <div class="col-md-12">
-                <input type="text" name="username" class="form-control" id="username" ng-model="credentials.username" required>
+                <input type="text" name="username" class="form-control" id="username" ng-model="user.Username" required>
             </div>
             <label for="password" class="col-md-3 control-label">Password: </label>
             <div class = "col-md-12">
-                <input type="password" name="password" class="form-control" id="password" ng-model="credential.password" data-ng-pattern="passwordPattern" required>
+                <input type="password" name="password" class="form-control" id="password" ng-model="user.Password" data-ng-pattern="passwordPattern" required>
             </div>
             <label for="fullName" class="col-md-3 control-label">Name: </label>
             <div class = "col-md-12">
-                <input type="text" name="fullName" class="form-control" id="fullName" ng-model="credential.fillName" required>
+                <input type="text" name="fullName" class="form-control" id="fullName" ng-model="user.Name" required>
             </div>
             <label for="phonenumber" class="col-md-3 control-label">Phone: </label>
             <div class = "col-md-12">
-                <input type="text" name="phonenumber" class="form-control" id="phonenumber" ng-model="credential.phonenumber" required>
+                <input type="text" name="phonenumber" class="form-control" id="phonenumber" ng-model="user.Phone" required>
             </div>
         </div>
         <div class="col-md-6">
             <label for="confirmedPass" class="col-md-12 control-label">Confirm password: </label>
             <div class = "col-md-12">
-                <input type="password" name="confirmedPass" class="form-control" id="confirmedPass" ng-model="credential.confirmedPass" data-ng-pattern="passwordPattern" required>
+                <input type="password" name="confirmedPass" class="form-control" id="confirmedPass" ng-model="user.ConfirmPassword" data-ng-pattern="passwordPattern" required>
             </div>
             <label for="email" class="col-md-3 control-label">Email: </label>
             <div class = "col-md-12">
-                <input type="email" name="email" class="form-control" id="email" ng-model="credential.email" required>
+                <input type="email" name="email" class="form-control" id="email" ng-model="user.Email" required>
             </div>
             <label for="select" class="col-md-3 control-label">Town: </label>
             <div class="col-md-12">
-                <select class="form-control" id="select" name="town" ng-model="credentials.town">
-                    <option ng-repeat="town in towns" value="{{town.id}}">{{town.name}}</option>
+                <select class="form-control" id="select" name="town" ng-model="user.townId" requiered>
+                    <option ng-repeat="town in towns" data-id="{{town.id}}" value="{{town.id}}">{{town.name}}</option>
                 </select>
             </div>
         </div>
     </fieldset>
     <br/>
     <div class="col-md-12 row center-block">
-        <a href="#" ng-click="Register(user, registerForm)" data-ng-disabled="registerForm.$invalid || user.password != user.confirmedPass" class="col-md-3 col-md-offset-1 btn btn-primary">Register</a>
+        <a href="#" ng-click="Register(user, registerForm)" data-ng-disabled="registerForm.$invalid || user.Password != user.ConfirmPassword" class="col-md-3 col-md-offset-1 btn btn-primary">Register</a>
         <a href="#/login" class="col-md-3 col-md-offset-4 btn btn-primary">Login here</a>
     </div>
 </form>

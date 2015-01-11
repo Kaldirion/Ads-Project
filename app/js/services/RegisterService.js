@@ -3,6 +3,7 @@ adsApp.factory('RegisterService', ['$http', 'baseUrl', '$q',
         var userServiceUrl = baseUrl + '/user';
 
         function register(user) {
+            console.log(user);
             var d = $q.defer();
             $http.post(userServiceUrl + '/register', user)
                 .success(function (userRegistrationData) {
