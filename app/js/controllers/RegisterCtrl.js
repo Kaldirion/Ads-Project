@@ -3,7 +3,7 @@ adsApp.controller('RegisterController',['$scope','$location','notification','Reg
 
         $scope.towns = TownsService.all();
         $scope.passwordValidationPattern = /((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})/;
-
+        $scope.emailValidationPattern = /([a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)/;
         $scope.Register = function(user, registerForm){
             if (registerForm.$valid){
                 console.log(user);
