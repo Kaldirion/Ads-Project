@@ -61,26 +61,13 @@ ul {
     border-radius: 8px;
 }
 
-.login-form {
+.login-form,.register-form,.publish-ad-form,.edit-profile-form {
     border: 1px solid black;
     background-color: #A9D18E;
     padding: 10px;
 }
 
-.register-form {
-    border: 1px solid black;
-    background-color: #A9D18E;
-    padding: 10px;
-}
-
-.publish-ad-form {
-    border: 1px solid black;
-    background-color: #A9D18E;
-    padding: 10px;
-}
-
-.edit-profile-form {
-    border: 1px solid black;
-    background-color: #A9D18E;
-    padding: 10px;
+.ads-image-box {
+    width: 170px;
+    height: 150px;
 }
